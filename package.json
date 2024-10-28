@@ -2,14 +2,38 @@
   "name": "@aiofc-nx-v20rc-1028/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+
   "private": true,
-  "dependencies": {},
+  "packageManager": "pnpm@9.3.0",
+  "volta": {
+    "node": "20.16.0",
+    "pnpm": "9.3.0"
+  },
+    "scripts": {
+    "prebuild": "rimraf dist",
+    "test:all": "nx affected:test --all --codeCoverage --skip-nx-cache",
+    "prepare": "husky install",
+    "lint:ws": "pnpm dlx sherif@latest",
+    "lint:ws-fix": "pnpm dlx sherif@latest --fix",
+    "clean": "git clean -xdf node_modules",
+    "clean-all": "pnpm run clean && pnpm recursive exec rm -rf node_modules"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
+    "@commitlint/config-nx-scopes": "^19.5.0",
     "@nx/js": "20.0.6",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "commitizen": "^4.3.1",
+    "cz-customizable": "^7.2.1",
+    "husky": "^8.0.0",
     "nx": "20.0.6",
     "tslib": "^2.3.0",
     "typescript": "~5.5.2"
