@@ -25,7 +25,8 @@
           "targetName": "build",
           "configName": "tsconfig.lib.json"
         }
-      }
+      },
+      "exclude": ["libs/bootstrap/*"]
     },
     {
       "plugin": "@nx/jest/plugin",
