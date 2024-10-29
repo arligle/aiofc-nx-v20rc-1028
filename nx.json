@@ -26,7 +26,7 @@
           "configName": "tsconfig.lib.json"
         }
       },
-      "exclude": ["libs/bootstrap/*"]
+      "exclude": ["libs/bootstrap/*", "libs/config/*"]
     },
     {
       "plugin": "@nx/jest/plugin",

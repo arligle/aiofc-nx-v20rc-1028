@@ -1,19 +1,11 @@
 import { Module } from '@nestjs/common';
-import { TypedConfigModule, fileLoader } from 'nest-typed-config';
 import { AppController, ConfigController } from './app.controller';
 import { AppService } from './app.service';
-import { RootConfig } from './config';
-
+import { ProjectConfig } from '../config/app.config';
+import { setupYamlBaseConfigModule } from '@aio/config';
 @Module({
   imports: [
-    TypedConfigModule.forRoot({
-      schema: RootConfig,
-      load: fileLoader({
-        absolutePath: './apps/master/src/config/.env.yaml',
-        ignoreEnvironmentVariableSubstitution: false,
-        ignoreEmptySearchPlaces: false,
-      }),
-    }),
+    setupYamlBaseConfigModule(__dirname, ProjectConfig),
   ],
   controllers: [AppController, ConfigController],
   providers: [AppService],

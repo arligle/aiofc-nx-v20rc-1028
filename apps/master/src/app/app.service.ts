@@ -1,23 +1,24 @@
 import { Injectable } from '@nestjs/common';
-import { RootConfig, DatabaseConfig, TableConfig } from './config';
+import { ProjectConfig } from '../config/app.config';
 @Injectable()
 export class AppService {
+
   constructor(
-    private config: RootConfig,
-    private databaseConfig: DatabaseConfig,
-    private tableConfig: TableConfig
+    private config: ProjectConfig
   ) {}
 
-  public show(): any {
+  readConfig(): string { 
     const out = [
-      `root.name: ${this.config.name}`,
-      `root.database.name: ${this.databaseConfig.name}`,
-      `root.database.table.name: ${this.tableConfig.name}`,
+      `project.name: ${this.config.name}`,
+      `project.version: ${this.config.version}`,
+      `project.time: ${this.config.title}`,
     ].join('\n');
 
     return `${out}\n`;
   }
+
   getData(): { message: string } {
     return { message: 'Hello API' };
   }
+
 }

@@ -16,7 +16,8 @@
     "rootDir": ".",
     "allowJs": true,
     "paths": {
-      "@aio/bootstrap": ["libs/bootstrap/src/index.ts"]
+      "@aio/bootstrap": ["libs/bootstrap/src/index.ts"],
+      "@aio/config": ["libs/config/src/index.ts"]
     }
   }
 }

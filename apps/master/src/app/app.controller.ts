@@ -11,12 +11,13 @@ export class AppController {
     return this.appService.getData();
   }
 }
+
 @Controller('/config')
 export class ConfigController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
   showConfig() {
-    return this.appService.show();
+    return this.appService.readConfig();
   }
 }
