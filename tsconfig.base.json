@@ -17,7 +17,8 @@
     "allowJs": true,
     "paths": {
       "@aio/bootstrap": ["libs/bootstrap/src/index.ts"],
-      "@aio/config": ["libs/config/src/index.ts"]
+      "@aio/config": ["libs/config/src/index.ts"],
+      "@aio/i18n": ["libs/i18n/src/index.ts"]
     }
   }
 }

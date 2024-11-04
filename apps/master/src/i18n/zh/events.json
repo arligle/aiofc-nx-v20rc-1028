@@ -1,0 +1,9 @@
+{
+    "email": "电子邮件地址",
+    "password": "密码",
+    "NOT_EMPTY": "$t(validation.{property}) 不能为空",
+    "INVALID_EMAIL": "邮箱不可用",
+    "INVALID_BOOLEAN": "{property} 数据格式需要布尔值",
+    "MIN": "{property} 的值为: \"{value}\" 至少需要满足 {constraints.0}, 否则会出现 {message}",
+    "MAX": "{property} 的值为: \"{value}\" 必须小于 {constraints.0}, 否则会出现 {message}"
+}
